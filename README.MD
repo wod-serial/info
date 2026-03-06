@@ -1,19 +1,21 @@
-![img.png](img.png)
+# Mediawiki сериала
 
+Это репозиторий для информации и настроек вики проектов сериала.
+На текущий момент подняты следующие вики:
+* https://oh.wod-serial.ru/
+* https://abyss.wod-serial.ru/
+* https://unity-wod-serial.ru/
+* https://tc.serial-wod.ru/
 
-# Technocraty database
-
-Это репозиторий для информации и настроек поднятия техновики.
-
-В текущий момент она поднята в виде трёх docker контейнеров, документация по ним и docker compose лежит [тут](https://github.com/jehy/php-fpm-mediawiki).
+Каждая из них поднята в виде трёх docker контейнеров (mysql, nginx, php), документация по ним и docker compose лежит [тут](https://github.com/jehy/php-fpm-mediawiki).
 
 
 ### Перенос
 
 Для того, чтобы перенести вики на другой сервер или для локальной отладки, нужно:
 
-1. Остановить контейнеры (для этого есть красивая веб морда, спросите Джехи)
-2. Перенести `/var/lib/docker/volumes/*` на другой сервер в такую же директорию
+1. Остановить контейнеры (для этого есть красивая веб морда, спросите Джехи или Кузбмина)
+2. Перенести `/var/lib/docker/volumes/*` и `/etc/nginx/` на другой сервер в такую же директорию
 3. Развернуть на этом сервере `docker-compose.yml`, указав там два необходимых секрета (пароли к СУБД)
 4. Поправить домен в `LocalSettings.php` на новый, если нужно
 5. Выкинуть наружу порт от nginx, который слушает только `127.0.0.1:6602` - например, через другой nginx и proxy_pass
@@ -57,6 +59,6 @@ composer install
 
 ### AcessControl
 
-Используется чуток поправленный стандартный [AccessControl](https://www.mediawiki.org/wiki/Extension:AccessControl) из [этого репозитория](https://github.com/wod-serial/AccessControl).
+Для техновики используется чуток поправленный стандартный [AccessControl](https://www.mediawiki.org/wiki/Extension:AccessControl) из [этого репозитория](https://github.com/wod-serial/AccessControl).
 
 Теги доступа поправлены в дампе при помощи [этого скрипта](https://github.com/wod-serial/access-fixer).
