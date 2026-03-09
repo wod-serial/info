@@ -7,7 +7,7 @@
 * https://unity-wod-serial.ru/
 * https://tc.serial-wod.ru/
 
-Каждая из них поднята в виде трёх docker контейнеров (mysql, nginx, php), документация по ним и docker compose лежит [тут](https://github.com/jehy/php-fpm-mediawiki).
+Каждая из них поднята в виде четырёх docker контейнеров (mysql, nginx, php, images), документация по ним и docker compose лежит [тут](https://github.com/jehy/php-fpm-mediawiki).
 
 
 ### Перенос
@@ -55,7 +55,7 @@ composer install
 
 ### Настройка почты
 
-Почта перенастроена через SMTP по [этой инструкции](https://www.mediawiki.org/wiki/Manual:$wgSMTP). Можно использовать любой подходящий сервис, выдающий SMTP креды - например, https://smtp2go.com/ .
+Почта перенастроена через SMTP по [этой инструкции](https://www.mediawiki.org/wiki/Manual:$wgSMTP). Можно использовать любой подходящий сервис, выдающий SMTP креды - например, yandex postbox или https://smtp2go.com/ .
 
 ### AcessControl
 

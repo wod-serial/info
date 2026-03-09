@@ -84,11 +84,13 @@ volumes:
 * Биллинг написан руками без фреймворка и на устаревшей версии PHP.
 * Сайт `https://serial-wod.ru/` написан на фреймворке Yii.
 * На этом же сервере поднят дайс бот Клэр, информация о нём - в [соседнем репозитории](https://github.com/wod-serial/ClairDiceBot).
-* в `/var/www/html` лежит статический сайт https://season-food.serial-wod.ru/ - для ничего не нужно кроме настроек nginx из `/etc/nginx/sites-available/serial-season-food.conf`.
+* В директории `/var/www/html` лежит статический сайт https://season-food.serial-wod.ru/ - для ничего не нужно кроме настроек nginx из `/etc/nginx/sites-available/serial-season-food.conf`.
+* Вебсайт и биллинг так же лежат на гитхабе [в приватных репозиториях wod-serial](https://github.com/wod-serial).
 
 ## Другое
 * В яндекс облаке настроены снепшоты ВМ, из которых можно поднять бекап, если есть доступ.
-* В качестве удобных инструментов для работы с докер контейнерами, рекомендуется dozzle, glances, monocker.
+* База данных биллинга и вебсайта так же резервируются через контейнеры `fradelg/mysql-cron-backup`, запущенные в их стеках. Бекапы лежат на ФС в виде SQL файлов.
+* В качестве удобных инструментов для работы с докер контейнерами, рекомендуется portainer, dozzle, glances, monocker.
 * В некоторых стеках docker-compose так же есть контейнеры sftp и phpmyadmin - они сделаны для лёгкого доступа разработчиков сериала к нужным им ресурсам.
 * Есть [Облачный мониторинг аптайма](https://wod-serial.betteruptime.com/).
 * Почта настроена через [yandex postbox](https://yandex.cloud/ru/docs/postbox/quickstart#smtp-send). В случае переноса можно так же использовать, например, [smtp2go](https://www.smtp2go.com/).
