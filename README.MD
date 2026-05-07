@@ -83,7 +83,7 @@ volumes:
 * Биллинг написан руками без фреймворка и на устаревшей версии PHP.
 * Сайт `https://serial-wod.ru/` написан на фреймворке Yii.
 * На этом же сервере поднят дайс бот Клэр, информация о нём - в [соседнем репозитории](https://github.com/wod-serial/ClairDiceBot).
-* В директории `/var/www/html` лежит статический сайт https://season-food.serial-wod.ru/ - для ничего не нужно кроме настроек nginx из `/etc/angie/sites-available/serial-season-food.conf`. Так же его можно взять не с сервера, а из [этого репозитория](https://github.com/wod-serial/season-food/tree/master).
+* В директории `/var/www/html` лежит статический сайт https://season-food.serial-wod.ru/ - для ничего не нужно кроме настроек angie из `/etc/angie/sites-available/serial-season-food.conf`. На текущий момент он там вообще не нужен, так как сайт публикуется без сервера из github pages [этого репозитория](https://github.com/wod-serial/season-food/tree/master).
 * Вебсайт и биллинг так же лежат на гитхабе [в приватных репозиториях wod-serial](https://github.com/wod-serial).
 
 ## Другие бекапы
